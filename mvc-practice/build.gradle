@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    // SLF4J Logging
+    implementation 'org.slf4j:slf4j-api:1.7.32'
+    implementation 'org.slf4j:slf4j-simple:1.7.32' // or another binding if you prefer
+
+    // Tomcat Embed for standalone Tomcat
+    implementation 'org.apache.tomcat.embed:tomcat-embed-core:9.0.82'
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper:9.0.82'
+    implementation 'org.apache.tomcat.embed:tomcat-embed-el:9.0.82'
+    implementation 'org.apache.tomcat.embed:tomcat-embed-websocket:9.0.82'
+
+}
+
+test {
+    useJUnitPlatform()
+}
